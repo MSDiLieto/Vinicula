@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="container">
+    <p class="h1 text-center">Vinicula</p>
+
+    <form method="post">
+        {% csrf_token %}
+
+        <div class="row">
+            <div class="col-6">
+                {{ form.nomeVinicula | as_crispy_field}}
+            </div>
+            <div class="col-6">
+                {{ form.endereco | as_crispy_field}}
+            </div>
+            <div class="col-6">
+                {{ form.vinho | as_crispy_field}}
+            </div>
+            <div class="col-6">
+                {{ form.produtor | as_crispy_field}}
+            </div>
+        </div>
+
+        <button type="submit" class="btn">Enviar</button>
+
+    </form>
+
+</div>
+
+{% endblock %}
